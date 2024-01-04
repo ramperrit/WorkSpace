@@ -1,0 +1,7 @@
+
+public class Hello {
+	public static void main(String[] args) {
+		
+		System.out.printf("%1$d %0$d %2$f", 10, 20, 1.23);
+	}
+}

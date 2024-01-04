@@ -1,0 +1,11 @@
+
+public class Hello {
+	public static void main(String[] args) {
+		String str1 = "10";
+		byte a = Byte.parseByte(str1);
+		System.out.println(a);
+		String str2 = "200";
+		short b = Short.parseShort(str2);
+		System.out.println(b);
+	}
+}
