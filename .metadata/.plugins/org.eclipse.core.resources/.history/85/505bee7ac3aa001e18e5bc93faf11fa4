@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class new1 {
+	public static void main(String[] args) {
+		int value = 123;
+		System.out.printf("상품의 가격 : %d원\n",value);
+		System.out.printf("상품의 가격 :%7d원\n",value);
+		System.out.printf("상품의 가격 :%-7d원\n",value);
+		System.out.printf("상품의 가격 :%06d원\n",value);
+		
+		int rad = 10;
+		double area = Math.PI * rad * rad;
+		Scanner scan = new Scanner(System.in);
+		System.out.printf("원의 반지름을 입력하세요 -> %d\n",rad);
+		System.out.printf("반지름이 %d인 원의 넓이 : %.2f",rad,area);
+		
+		
+	}
+}

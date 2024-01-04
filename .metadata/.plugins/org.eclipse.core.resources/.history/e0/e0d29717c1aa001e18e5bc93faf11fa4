@@ -1,0 +1,9 @@
+
+public class new1 {
+	public static void main(String[] args) {
+		int value = 123;
+		System.out.printf("상품의 가치 : %d원\n");
+		System.out.printf("상품의 가치 :    123원\n");
+		System.out.printf("상품의 가치 :    123원\n");
+	}
+}

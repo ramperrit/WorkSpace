@@ -1,0 +1,15 @@
+package Chapter2;
+
+import java.util.*;
+import java.math.*;
+
+public class DiceGame {
+
+	public static void main(String[] args) {
+		int dice1 = Math.random() * 6 + 1;
+		int dice2 = Math.random() * 6 + 1;
+		int dice3 = Math.random() * 6 + 1;
+		System.out.println(dice1, dice2, dice3);
+	}
+
+}
