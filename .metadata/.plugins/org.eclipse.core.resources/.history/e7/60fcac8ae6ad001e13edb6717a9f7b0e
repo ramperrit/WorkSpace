@@ -1,0 +1,29 @@
+package Chapter5;
+
+import java.util.*;
+
+public class Student {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		//학급 수 받기
+		System.out.println("학급 수를 입력하세요 -->");
+		int classNum = Integer.parseInt(scan.nextLine());
+		//배열 설정
+		int [][] heights = new int [classNum][];
+		
+		
+		//키 데이터 받기
+		
+		System.out.println((i+1)+"반의 학생 수를 입력하세요-->");
+		
+		
+	
+		
+		
+		
+
+	}
+
+}

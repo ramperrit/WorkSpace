@@ -1,0 +1,12 @@
+package Chapter5;
+
+public class CharAtExam {
+
+	public static void main(String[] args) {
+		
+		String ssn = "956241230123";
+		char gender = ssn.charAt(6);
+		System.out.println(gender);
+	}
+
+}
