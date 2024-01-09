@@ -1,0 +1,23 @@
+package Chapter06;
+
+public class Car { //명시적 초기화
+	String model = "현대 자동차";
+	int speed = 60;
+	boolean start = true;
+	
+	// 초기값 블럭
+	{  
+		model = "기아자동차";
+		speed = 60;
+	}
+	
+	// 생성자
+	Car() {
+		speed = 30;
+	}
+	
+
+}
+
+// 디폴트 << 명시적 초기화 << 초기화 블럭 << 생성자 
+// 가장 마지막으로 받는 값은 생성자
