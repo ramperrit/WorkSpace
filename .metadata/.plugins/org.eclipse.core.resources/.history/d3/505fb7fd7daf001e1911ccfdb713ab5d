@@ -1,0 +1,27 @@
+package Chapter6_Example;
+
+public class SutdaCard {
+    int num = 0;
+	boolean isKwang = true;
+	
+	
+//	SutdaCard(boolean isKwang){
+//		System.out.println("광이면 true, 아니면 false");
+//	}
+	
+	SutdaCard(int num, boolean isKwang){
+		
+	}
+	
+	 void info() {
+		 if(num < 1 || num > 11) {
+				System.out.println("");
+			}else {
+				System.out.println(num);
+			}
+			if(isKwang = true) {
+				System.out.println(num+"K");
+			}
+	}
+	
+}

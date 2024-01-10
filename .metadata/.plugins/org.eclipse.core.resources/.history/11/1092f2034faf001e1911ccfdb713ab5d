@@ -1,0 +1,13 @@
+package Chapter6;
+
+public class RectangleExam {
+
+	public static void main(String[] args) {
+		Rectangle rec = new Rectangle();
+		
+		System.out.println(rec.round(10,15));
+		System.out.println(rec.area(10,15));
+		System.out.println(rec.area(9.6,11.2));
+	}
+
+}

@@ -1,0 +1,10 @@
+package Chapter6_Example;
+
+public class SutdaCard {
+	SutdaCard(int num){
+		System.out.println("카드의 숫자.(1~10사이의 정수)");
+	}
+	SutdaCard(boolean isKwang){
+		System.out.println("광이면 true, 아니면 false");
+	}
+}

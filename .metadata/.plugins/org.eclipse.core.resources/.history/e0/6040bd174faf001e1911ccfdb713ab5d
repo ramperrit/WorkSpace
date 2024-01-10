@@ -1,0 +1,25 @@
+package Chapter6;
+
+public class Rectangle {
+	boolean create = false;
+	
+	double area(double x, double y) {
+		double result = 0;
+		result = x * y;
+		System.out.printf("가로가 " + x + ", 세로가 " + y + "인 직사각형의 넓이 : " + result);
+		return result;
+	}
+	
+	double round(double x, double y) {
+		double result = 0;
+		result = 2*(x+y);
+		System.out.println("직사각형의 둘래 : " + result);
+		return result;
+	}
+	
+	void createOn() {
+		this.create = true;
+		System.out.println("Rectangle 객체를 생성하였습니다.");
+	}
+
+}
