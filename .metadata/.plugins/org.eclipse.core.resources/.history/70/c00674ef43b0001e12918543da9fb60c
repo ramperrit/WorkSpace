@@ -1,0 +1,20 @@
+package Chapter7;
+
+public class SuperSonicAirplane extends Airplane {
+	public static final int NOMAL = 1;
+	public static final int SUPERSONIC = 2;
+	
+	public int flyMode = NOMAL;
+	
+	//anotation // 상속받을 때 필요 
+	@Override
+	public void fly() {
+		 if(this.flyMode == SUPERSONIC) {
+			 System.out.println("초음속 비행중입니다.");
+		 }else {
+			 super.fly();   // 부모의 fly 그대로 출력
+		 }
+	}
+	
+	
+}

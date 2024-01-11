@@ -1,0 +1,18 @@
+package Chapter6;
+
+class Account2 {
+	private int balance;
+	
+	
+	int setBalance(int balance){
+		if(balance > 0 && balance <= 1000000) {
+			this.balance = balance;
+		}
+		return balance;
+	}
+
+	public int getBalance() {
+	  return this.balance;
+	}
+	
+}

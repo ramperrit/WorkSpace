@@ -1,0 +1,22 @@
+package Chapter7;
+
+public class ChildExam {
+
+	public static void main(String[] args) {
+
+		Child child = new Child();
+		
+		//자동 형변환
+		Parent parent = child;
+		
+		parent.method();
+		parent.method2();
+//		parent.method3(); ////error
+		
+		Child child2 = (Child)parent;
+		
+		child2.method3();
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package Chapter7;
+
+public class Driver {
+	public Vehicle vehicle;
+	public String name;
+	
+	Driver(String name){
+		this.name = name;
+	}
+	
+	public void drive() {
+		vehicle.run();
+	}
+	
+}

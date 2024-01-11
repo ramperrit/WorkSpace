@@ -4,6 +4,14 @@ package Chapter6;
 class Account {
 	// 클래스 내부에서만 사용 가능
 	private int balance;
+	String accountNum;
+	String name;
+	int money;	
+	int MIN_BALANCE = 0;
+	int MAX_BALANCE = 1000000;
+	Account[] accounts = new Account[100];
+	
+	Account(){}
 	
 	//잔액 확인
 	public int getBalance() {
@@ -11,11 +19,9 @@ class Account {
 	}
 	
 	//계좌 개설 초기값
-	public void setBalance(int money) {
-		if(money >= 1000) {
+	public void setBalance(int money){
+		if(money >=  MIN_BALANCE && money <= MAX_BALANCE) {
 			this.balance = money;
-		}else {
-			System.out.println("1000원 미만의 금액으로 계좌 개설 불가.");
 		}
 	}
 	
@@ -29,4 +35,17 @@ class Account {
 		return this.balance;
 	}
 	
+	public Account(String accountNum, String name, int money) {
+		this.accountNum = accountNum;
+		this.name = name;
+		this.setBalance(money);
+	}
+	
+	void accountList() {
+		for(int i=0; i<3;i++) {
+			System.out.println(accounts[i].accountNum + "  " + accounts[i].name + "  " + accounts[i].money);
+		}
+	}
+
+
 }

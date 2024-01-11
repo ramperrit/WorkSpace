@@ -1,0 +1,38 @@
+package Chapter6;
+import java.util.*;
+
+class BankApplication {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int select =0;
+		String[] Account = null;
+		String accountNum; 
+		String name; 
+		int money = 0;
+				
+		while(select<5) {
+			System.out.println("------------------------------------------");
+			System.out.println("1.계좌생성 | 2.계좌목록 | 3.예금 | 4.출금 | 5.종료");
+			System.out.println("------------------------------------------");
+			System.out.println("선택>");
+			select = Integer.parseInt(scan.nextLine());
+		switch(select) {
+		case 1:
+			System.out.println("-------");
+			System.out.println(" 계좌생성 ");
+			System.out.println("-------");
+			System.out.println("계좌번호:");
+			accountNum = scan.nextLine();
+			System.out.println("계좌주:");
+			name = scan.nextLine();
+			System.out.println("초기입금액:");
+			money = Integer.parseInt(scan.nextLine());
+			System.out.println(setBalance(money));
+		}
+		}
+	}
+		
+	}
+

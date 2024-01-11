@@ -1,8 +1,0 @@
-package Chapter3;
-
-public class SignOperartor1 {
-
-	public static void main(String[] args) {
-		
-	}
-}

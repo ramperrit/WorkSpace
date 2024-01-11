@@ -1,8 +1,0 @@
-
-public class Hello {
-	public static void main(String[] args) {
-		String var = new String("A");
-		String var = "A";
-		System.out.println(var);
-	}
-}
