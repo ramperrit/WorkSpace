@@ -1,0 +1,9 @@
+package Chapter8_Example;
+
+public abstract class Vehicle {
+	
+	private String model;
+	private int price;
+	
+	public abstract double calcTax();
+}

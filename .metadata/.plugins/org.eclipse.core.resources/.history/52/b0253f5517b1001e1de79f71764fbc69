@@ -1,0 +1,26 @@
+package Chapter8_Example;
+
+public class Car extends Vehicle{
+	private int gas;
+	private double price;
+	
+	
+	public void Car(String model, int price, int gas) {
+		System.out.println("모델명: "+model+", 가격: "+price+", 배기량: "+gas);
+	}
+
+
+	@Override
+	public double calcTax() {
+		if(gas >= 3000) {
+			tax = price*0.05;
+		}else if(gas < 3000 && gas >= 1500) {
+			tax = price*0.03;
+		}else {
+			tax = price*0.01;
+		}
+		return tax;
+	}
+	
+
+}

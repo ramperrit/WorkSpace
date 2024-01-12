@@ -1,0 +1,35 @@
+package Chapter8_Example3;
+
+public class Dog extends Pet{
+	private String speices;
+	private boolean shot;
+	
+	public boolean shot(String answer) {
+		if(answer == "예") {
+			shot = true;
+		}else {
+			shot = false;
+		}
+		return shot;
+	}
+	
+	@Override
+	public String name() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int age() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void Info() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

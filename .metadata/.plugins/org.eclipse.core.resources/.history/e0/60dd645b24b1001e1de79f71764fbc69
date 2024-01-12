@@ -1,0 +1,15 @@
+package Chapter8_Example2;
+
+import Chapter8_Example1.Vehicle;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		
+
+	}
+	private static double calculate(TaxPayer t) {
+		return t.calcTax();
+	}
+
+}

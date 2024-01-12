@@ -1,0 +1,15 @@
+package Chapter8_Example3;
+
+public class DogDrive {
+
+	public static void main(String[] args) {
+
+		String name;
+		int age;
+		boolean shot = false;
+		
+		
+		
+	}
+
+}

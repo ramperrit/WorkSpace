@@ -1,0 +1,19 @@
+package Chapter8;
+
+public class SmartTvExam {
+
+	public static void main(String[] args) {
+//		RemoteCon rc = new SmartTvImpl();
+//		rc.turnOn();
+//		rc.turnOff();
+//		
+//		Searchable searchable = new SmartTvImpl();
+//		searchable.search("naver");
+		
+		SmartTv st = new SmartTvImpl();
+		st.turnOn();
+		st.turnOff();
+		st.search("naver");
+	}
+
+}

@@ -1,0 +1,32 @@
+package Chapter8_Example;
+
+public abstract class Vehicle {
+	
+	private String model;
+	private int price;
+	double tax;
+	int gas;
+	int weight;
+	
+	
+	public abstract double calcTax();
+	
+	
+	public abstract String getInfo();
+
+
+	public String getModel() {
+		return model;
+	}
+
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+	
+	public void Car(String model, int price, int gas) {
+		this.model = model;
+		this.price = price;
+		this.gas = gas;
+	}
+}

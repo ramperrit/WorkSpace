@@ -1,0 +1,19 @@
+package Chapter8;
+
+public interface DataAccessObject {
+	
+	public static void select() {
+		System.out.println("DB에서 검색");
+	}
+	public static void insert() {
+		System.out.println("DB에 삽입");
+	}
+	public static void update() {
+		System.out.println("DB를 수정");
+	}
+	public static void delete() {
+		System.out.println("DB에서 삭제");
+	}
+	
+
+}

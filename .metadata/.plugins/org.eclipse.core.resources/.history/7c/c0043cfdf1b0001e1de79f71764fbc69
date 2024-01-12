@@ -1,0 +1,23 @@
+package Chapter8;
+
+public class BusExam {
+
+	public static void main(String[] args) {
+		Vehicle vehicle = new Bus();
+		vehicle.run();
+//		vehicle.checkFare(); error
+		
+		Bus bus = (Bus)vehicle;
+		bus.run();
+		bus.checkFare();
+		
+		Vehicle taxi = new Taxi();
+		
+	}
+	
+	static void ride(Vehicle v) {
+		v.run();
+		v.check
+	}
+
+}

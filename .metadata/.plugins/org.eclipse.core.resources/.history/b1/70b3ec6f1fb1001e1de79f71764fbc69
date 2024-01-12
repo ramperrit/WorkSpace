@@ -1,0 +1,20 @@
+package Chapter8_Example2;
+
+public abstract class TaxPayer {
+	private String name;
+	private int payerNum;
+	
+	public String getName() {
+		return name;
+	}
+	public String setName() {
+		return this.name = name;
+	}
+	
+	public int geyPayerNum() {
+		return payerNum;
+	}
+	public String setPayerNum() {
+		return this.payerNum = payerNum;
+	}
+}

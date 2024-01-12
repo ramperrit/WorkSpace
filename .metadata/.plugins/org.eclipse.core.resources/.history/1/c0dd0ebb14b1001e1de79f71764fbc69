@@ -1,0 +1,12 @@
+package Chapter8_Example;
+
+public class Car extends Vehicle{
+	private int gas;
+	
+	
+	public void Car(String model, int price, int gas) {
+		System.out.println("모델명: "+model+", 가격: "+price+", 배기량: ");
+		System.out.println("세금 : "+ );
+	}
+
+}

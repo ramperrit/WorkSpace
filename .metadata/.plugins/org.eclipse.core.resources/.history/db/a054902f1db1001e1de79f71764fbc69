@@ -1,0 +1,6 @@
+package Chapter8_Example;
+
+public class Truck extends Vehicle{
+	
+
+}
