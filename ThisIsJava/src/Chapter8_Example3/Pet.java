@@ -5,6 +5,7 @@ public abstract class Pet {
 	private String name;
 	private int age;
 	
+	
 	public String getName() {
 		return name;
 	}
@@ -21,7 +22,7 @@ public abstract class Pet {
 	
 	public abstract String name();
 	public abstract int age();
-	public abstract void Info();
+	public abstract String Info();
 	
 	
 	
