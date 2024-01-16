@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="Chapter7.Calculator"/>
-    <fullyQualifiedTypeName name="Chapter7.Computer"/>
-    <fullyQualifiedTypeName name="Chapter7.Airplane"/>
-    <fullyQualifiedTypeName name="Chapter7.SuperSonicAirplane"/>
-    <fullyQualifiedTypeName name="Chapter7.FlyMode"/>
-    <fullyQualifiedTypeName name="Chapter7.Child"/>
-    <fullyQualifiedTypeName name="Chapter7.Parent"/>
-    <fullyQualifiedTypeName name="Chapter7.Tire"/>
-    <fullyQualifiedTypeName name="Chapter7.HankookTire"/>
-    <fullyQualifiedTypeName name="Chapter7.KumoTire"/>
-    <fullyQualifiedTypeName name="Chapter7.Vehicle"/>
-    <fullyQualifiedTypeName name="Chapter7.Driver"/>
-    <fullyQualifiedTypeName name="Chapter7.Bus"/>
-    <fullyQualifiedTypeName name="Chapter7.Taxi"/>
-    <fullyQualifiedTypeName name="Chapter7.Student"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="Chapter7.A"/>
     <fullyQualifiedTypeName name="Chapter7.Animal"/>
     <fullyQualifiedTypeName name="Chapter7.Person"/>
     <fullyQualifiedTypeName name="Chapter7.People"/>
@@ -47,7 +30,6 @@
     <fullyQualifiedTypeName name="Chapter9.RemoteControlImpl"/>
     <fullyQualifiedTypeName name="Chapter9.RemoteControl"/>
     <fullyQualifiedTypeName name="lib1.calc"/>
-    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
     <fullyQualifiedTypeName name="java.io.FileInputStream"/>
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
@@ -59,5 +41,23 @@
     <fullyQualifiedTypeName name="java.lang.Override"/>
     <fullyQualifiedTypeName name="Chapter12.StudentRecord"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="Chapter12.Member"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.EqualsAndHashCode"/>
+    <fullyQualifiedTypeName name="lombok.ToString"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+    <fullyQualifiedTypeName name="Chapter12.StringBuliderExam"/>
+    <fullyQualifiedTypeName name="java.util.StringJoiner"/>
+    <fullyQualifiedTypeName name="java.awt.desktop.SystemSleepEvent"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="Chapter12.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>
