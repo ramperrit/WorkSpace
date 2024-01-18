@@ -1,6 +1,0 @@
-package Chapter7;
-
-public enum FlyMode {
-	NOMAL,
-	SUPERSONIC
-}

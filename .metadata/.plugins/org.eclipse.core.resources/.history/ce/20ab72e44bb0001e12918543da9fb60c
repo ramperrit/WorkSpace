@@ -1,9 +1,0 @@
-package Chapter7;
-
-public class Bus extends Vehicle {
-	@Override
-	public void run() {
-		System.out.println("버슨가 움직입니다.");
-	} 
-
-}

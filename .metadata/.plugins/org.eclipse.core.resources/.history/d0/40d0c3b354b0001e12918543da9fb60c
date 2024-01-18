@@ -1,5 +1,0 @@
-package Chapter7;
-
-public non-sealed class Manager extends People{
-
-}

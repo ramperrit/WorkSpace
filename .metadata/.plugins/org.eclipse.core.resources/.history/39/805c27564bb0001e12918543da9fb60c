@@ -1,8 +1,0 @@
-package Chapter7;
-
-public class Taxi {
-	@Override
-	public void run() {
-		System.out.println("택시가 움직입니다.");
-	}
-}

@@ -1,6 +1,0 @@
-package Chapter7;
-
-public class Studnet extends Person{
-	public int studentNo;
-	
-}

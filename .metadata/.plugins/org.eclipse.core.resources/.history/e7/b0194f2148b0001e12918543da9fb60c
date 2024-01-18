@@ -1,7 +1,0 @@
-package Chapter7;
-
-public class Child extends Parent{
-	public void method2() {
-		
-	}
-}
