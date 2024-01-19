@@ -1,7 +1,0 @@
-package Chapter8;
-
-public interface RemoteControl {
-	public void turnOn();
-	
-	
-}
