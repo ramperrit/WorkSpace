@@ -1,7 +1,0 @@
-package Chapter8_Example2;
-
-public class SalaryTaxPayer extends TaxPayer{
-	private int salary;
-	
-	
-}

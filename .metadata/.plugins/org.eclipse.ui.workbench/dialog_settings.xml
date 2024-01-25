@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="WorkbenchPreferenceDialog">
-		<item key="DIALOG_X_ORIGIN" value="1540"/>
-		<item key="DIALOG_Y_ORIGIN" value="634"/>
-		<item key="DIALOG_WIDTH" value="783"/>
-		<item key="DIALOG_HEIGHT" value="632"/>
+		<item key="DIALOG_X_ORIGIN" value="2498"/>
+		<item key="DIALOG_Y_ORIGIN" value="317"/>
+		<item key="DIALOG_WIDTH" value="902"/>
+		<item key="DIALOG_HEIGHT" value="1519"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 	<section name="ImportExportAction">
