@@ -3,7 +3,6 @@ package SwingExam;
 import java.sql.Date;
 
 import lombok.Data;
-import lombok.*;
 
 @Data
 public class BoardDTO {

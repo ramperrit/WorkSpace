@@ -41,10 +41,16 @@ public class BoardApp extends JFrame {
 			tableModel.addColumn("날짜");
 			tableModel.addColumn("조회수");
 			
+			jTable.getColumn("번호").setPreferredWidth(50);
+			jTable.getColumn("제목").setPreferredWidth(300);
+			jTable.getColumn("글쓴이").setPreferredWidth(100);
+			jTable.getColumn("날짜").setPreferredWidth(100);
+			jTable.getColumn("조회수").setPreferredWidth(50);
+			
 			jTable.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-					jTable.setBackground(Color.yellow);
-					ViewDialog vd = new ViewDialog(BoardApp.this, jTable.getRowCount());
+//					jTable.setBackground(Color.YELLOW); 선택 열로 수정필요
+					ViewDialog vd = new ViewDialog(board, jTable.getSelectedRow()+1);
 					vd.setVisible(true);
 				}
 				

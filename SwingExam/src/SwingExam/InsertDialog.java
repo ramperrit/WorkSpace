@@ -2,7 +2,11 @@ package SwingExam;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -11,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import javax.swing.table.DefaultTableModel;
 
 public class InsertDialog extends JDialog {
 	private BoardApp boardApp;
@@ -40,47 +45,76 @@ public class InsertDialog extends JDialog {
 		if(pCenter==null) {
 			pCenter = new JPanel();
 			
-			pCenter.setLayout(new GridLayout(4,1));
 			
 			JPanel pTitleInput = new JPanel();
-			pTitleInput.setLayout(new GridLayout(1,2));
-			pTitleInput.add(new JLabel("제목",JLabel.LEFT));
-			pTitleInput.add(getPTitle());
+			JLabel label = new JLabel("제목",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pTitleInput.add(label);
+			pTitleInput.add(getTxtTitle());
+			txtTitle.getText();
 			pCenter.add(pTitleInput);
 			
 			JPanel pWriterInput = new JPanel();
-			pWriter.setLayout(new GridLayout(1,2));
-			pWriter.add(new JLabel("글쓴이",JLabel.LEFT));
-			pWriter.add(getPWriter());
+			label = new JLabel("글쓴이",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pWriterInput.add(label);
+			pWriterInput.add(getTxtWriter());
+			txtWriter.getText();
 			pCenter.add(pWriterInput);
 			
 			JPanel pContentInput = new JPanel();
-			pContent.setLayout(new GridLayout(1,2));
-			pContent.add(new JLabel("내용",JLabel.LEFT));
-			pContent.add(getPContent());
+			label = new JLabel("내용",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pContentInput.add(label);
+			pContentInput.add(getTxtContent());
+			txtContent.getText();
 			pCenter.add(pContentInput);
 			
 		}
 		return pCenter;
 	}
 	
+	public JTextField getTxtTitle() {
+		if(txtTitle == null) {
+			txtTitle = new JTextField();
+			txtTitle.setPreferredSize(new Dimension(250,30));
+		}
+		return txtTitle;
+	}
+	
+	public JTextField getTxtWriter() {
+		if(txtWriter == null) {
+			txtWriter = new JTextField();
+			txtWriter.setPreferredSize(new Dimension(250,30));
+		}
+		return txtWriter;
+	}
+	
+	public JTextArea getTxtContent() {
+		if(txtContent == null) {
+			txtContent = new JTextArea();
+			txtContent.setPreferredSize(new Dimension(250,80));
+		}
+		return txtContent;
+	}
+	
 	public JPanel getPTitle() {
 		if(pTitle==null) {
-			/*코드 추가*/
+			pTitle = new JPanel();
 		}
 		return pTitle;
 	}	
 	
 	public JPanel getPWriter() {
 		if(pWriter==null) {
-			/*코드 추가*/
+			pWriter = new JPanel();
 		}
 		return pWriter;
 	}		
 	
 	public JPanel getPContent() {
 		if(pContent == null) {
-			/*코드 추가*/
+			pContent = new JPanel();
 		}
 		return pContent;
 	}
@@ -88,9 +122,10 @@ public class InsertDialog extends JDialog {
 	public JPanel getPSouth() {
 		if(pSouth == null) {
 			pSouth = new JPanel();
+			pSouth.setBackground(Color.WHITE);
 			
 			JPanel pButton = new JPanel();
-			pButton.setBackground(Color.white);
+			pButton.setBackground(Color.WHITE);
 			pButton.add(getBtnOk());
 			pButton.add(getBtnCancel());
 			pSouth.add(pButton);
@@ -100,14 +135,40 @@ public class InsertDialog extends JDialog {
 	
 	public JButton getBtnOk() {
 		if(btnOk == null) {
-			/*코드 추가*/
+			btnOk = new JButton();
+			btnOk.setText("저장");
+			btnOk.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					BoardDTO dto = new BoardDTO();
+					dto.setTitle(txtTitle.getText());
+					dto.setWriter(txtWriter.getText());
+					dto.setContent(txtContent.getText());
+					//dao - 드라이버 오류 해결
+					BoardDAO dao = new BoardDAO();
+					dao.insertBoard(dto);
+					Object[] rowData = { dto.getBno(), dto.getTitle(), dto.getWriter(),dto.getRegdate(),dto.getHitcount() };
+					DefaultTableModel tableModel = (DefaultTableModel)boardApp.getBoardTable().getModel();
+					tableModel.addRow(rowData);
+					txtTitle.setText("");
+					txtWriter.setText("");
+					txtContent.setText("");
+					dispose();
+				}
+				
+			});
 		}
 		return btnOk;
 	}
 	
 	public JButton getBtnCancel() {
 		if(btnCancel == null) {
-			/*코드 추가*/
+			btnCancel = new JButton();
+			btnCancel.setText("취소");
+			btnCancel.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					dispose();
+				}
+			});
 		}
 		return btnCancel;
 	}	
