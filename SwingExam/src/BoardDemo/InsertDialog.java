@@ -1,12 +1,10 @@
-package SwingExam;
+package BoardDemo;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -15,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
-import javax.swing.table.DefaultTableModel;
 
 public class InsertDialog extends JDialog {
 	private BoardApp boardApp;
@@ -44,63 +41,25 @@ public class InsertDialog extends JDialog {
 	public JPanel getPCenter() {
 		if(pCenter==null) {
 			pCenter = new JPanel();
-			
-			
-			JPanel pTitleInput = new JPanel();
-			JLabel label = new JLabel("제목",JLabel.CENTER);
-			label.setPreferredSize(new Dimension(50,30));
-			pTitleInput.add(label);
-			pTitleInput.add(getTxtTitle());
-			txtTitle.getText();
-			pCenter.add(pTitleInput);
-			
-			JPanel pWriterInput = new JPanel();
-			label = new JLabel("글쓴이",JLabel.CENTER);
-			label.setPreferredSize(new Dimension(50,30));
-			pWriterInput.add(label);
-			pWriterInput.add(getTxtWriter());
-			txtWriter.getText();
-			pCenter.add(pWriterInput);
-			
-			JPanel pContentInput = new JPanel();
-			label = new JLabel("내용",JLabel.CENTER);
-			label.setPreferredSize(new Dimension(50,30));
-			pContentInput.add(label);
-			pContentInput.add(getTxtContent());
-			txtContent.getText();
-			pCenter.add(pContentInput);
-			
+			pCenter.add(getPTitle());
+			pCenter.add(getPWriter());
+			pCenter.add(getPContent());
 		}
 		return pCenter;
-	}
-	
-	public JTextField getTxtTitle() {
-		if(txtTitle == null) {
-			txtTitle = new JTextField();
-			txtTitle.setPreferredSize(new Dimension(250,30));
-		}
-		return txtTitle;
-	}
-	
-	public JTextField getTxtWriter() {
-		if(txtWriter == null) {
-			txtWriter = new JTextField();
-			txtWriter.setPreferredSize(new Dimension(250,30));
-		}
-		return txtWriter;
-	}
-	
-	public JTextArea getTxtContent() {
-		if(txtContent == null) {
-			txtContent = new JTextArea();
-			txtContent.setPreferredSize(new Dimension(250,80));
-		}
-		return txtContent;
 	}
 	
 	public JPanel getPTitle() {
 		if(pTitle==null) {
 			pTitle = new JPanel();
+			JLabel label = new JLabel("제목",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pTitle.add(label);
+			if(txtTitle == null) {
+				txtTitle = new JTextField();
+				txtTitle.setPreferredSize(new Dimension(250,30));
+				txtTitle.getText();
+			}
+			pTitle.add(txtTitle);
 		}
 		return pTitle;
 	}	
@@ -108,13 +67,33 @@ public class InsertDialog extends JDialog {
 	public JPanel getPWriter() {
 		if(pWriter==null) {
 			pWriter = new JPanel();
+			JLabel label = new JLabel("글쓴이",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pWriter.add(label);
+			if(txtWriter == null) {
+				txtWriter = new JTextField();
+				txtWriter.setPreferredSize(new Dimension(250,30));
+				txtWriter.getText();
+			}
+			pWriter.add(txtWriter);
+			
 		}
 		return pWriter;
 	}		
 	
 	public JPanel getPContent() {
-		if(pContent == null) {
+		if(pContent==null) {
 			pContent = new JPanel();
+			JLabel label = new JLabel("내용",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pContent.add(label);
+			if(txtContent == null) {
+				txtContent = new JTextArea();
+				txtContent.setPreferredSize(new Dimension(250,80));
+				txtContent.getText();
+			}
+			pContent.add(txtContent);
+			
 		}
 		return pContent;
 	}
@@ -143,15 +122,8 @@ public class InsertDialog extends JDialog {
 					dto.setTitle(txtTitle.getText());
 					dto.setWriter(txtWriter.getText());
 					dto.setContent(txtContent.getText());
-					//dao - 드라이버 오류 해결
-					BoardDAO dao = new BoardDAO();
-					dao.insertBoard(dto);
-					Object[] rowData = { dto.getBno(), dto.getTitle(), dto.getWriter(),dto.getRegdate(),dto.getHitcount() };
-					DefaultTableModel tableModel = (DefaultTableModel)boardApp.getBoardTable().getModel();
-					tableModel.addRow(rowData);
-					txtTitle.setText("");
-					txtWriter.setText("");
-					txtContent.setText("");
+					BoardDAO.getInstance().insertBoard(dto);
+					boardApp.getBoardTable();
 					dispose();
 				}
 				

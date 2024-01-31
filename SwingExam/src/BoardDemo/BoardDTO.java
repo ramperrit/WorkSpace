@@ -1,4 +1,4 @@
-package SwingExam;
+package BoardDemo;
 
 import java.sql.Date;
 

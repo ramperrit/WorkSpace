@@ -1,4 +1,4 @@
-package SwingExam;
+package BoardDemo;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 public class BoardDAO {
 	private static final BoardDAO instance = new BoardDAO();
-	private final String url = "jdbc:mysql://localhost/boarddemo";
+	private final String url = "jdbc:mysql://localhost:3306/boarddemo";
 	private final String user = "Java";
 	private final String password = "1234";
 	

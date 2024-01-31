@@ -1,4 +1,4 @@
-package SwingExam;
+package BoardDemo;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -6,6 +6,7 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -41,20 +42,40 @@ public class BoardApp extends JFrame {
 			tableModel.addColumn("날짜");
 			tableModel.addColumn("조회수");
 			
+			//db값 가져와서 표시
+			List<BoardDTO> boardList = BoardDAO.getInstance().getBoards();
+			for(int i=0;i<boardList.size();i++) {
+				BoardDTO dto = boardList.get(i);
+				Object[] rowData = { dto.getBno(), dto.getTitle(), dto.getWriter(),dto.getRegdate(),dto.getHitcount() };
+				tableModel.addRow(rowData);
+			}
+			
+			//칼럼 크기 조절
 			jTable.getColumn("번호").setPreferredWidth(50);
 			jTable.getColumn("제목").setPreferredWidth(300);
 			jTable.getColumn("글쓴이").setPreferredWidth(100);
 			jTable.getColumn("날짜").setPreferredWidth(100);
 			jTable.getColumn("조회수").setPreferredWidth(50);
 			
+			//클릭이벤트
 			jTable.addMouseListener(new MouseAdapter() {
 				public void mouseClicked(MouseEvent e) {
-//					jTable.setBackground(Color.YELLOW); 선택 열로 수정필요
+				    jTable.setSelectionBackground(Color.YELLOW);
 					ViewDialog vd = new ViewDialog(board, jTable.getSelectedRow()+1);
 					vd.setVisible(true);
-				}
-				
+				}				
 			});
+		}else {
+			//새로고침
+			final DefaultTableModel tableModel = (DefaultTableModel)jTable.getModel();
+			tableModel.setNumRows(0);
+			List<BoardDTO> boardList = BoardDAO.getInstance().getBoards();
+			for(int i=0;i<boardList.size();i++) {
+				BoardDTO dto = boardList.get(i);
+				Object[] rowData = { dto.getBno(), dto.getTitle(), dto.getWriter(),dto.getRegdate(),dto.getHitcount() };
+				tableModel.addRow(rowData);
+			}
+			
 		}
 		return jTable;
 	}

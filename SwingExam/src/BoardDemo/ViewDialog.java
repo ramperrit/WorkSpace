@@ -1,12 +1,8 @@
-package SwingExam;
+package BoardDemo;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -15,11 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.EtchedBorder;
-
-import SwingExam.BoardDAO;
-import SwingExam.BoardDTO;
 
 public class ViewDialog extends JDialog {
 	private BoardApp boardApp;
@@ -33,7 +24,6 @@ public class ViewDialog extends JDialog {
 	public ViewDialog(BoardApp boardApp, int bno) {
 		this.boardApp = boardApp;
 		this.bno = bno;
-		System.out.println(bno);
 		this.setTitle("게시물 보기");					
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		this.setResizable(false);	
@@ -53,61 +43,27 @@ public class ViewDialog extends JDialog {
 	public JPanel getPCenter() {
 		if(pCenter==null) {
 			pCenter = new JPanel();
-			
-			
-			JPanel pTitleUpdate = new JPanel();
-			JLabel label = new JLabel("제목",JLabel.CENTER);
-			label.setPreferredSize(new Dimension(50,30));
-			pTitleUpdate.add(label);
-			pTitleUpdate.add(getTxtTitle());
-			pCenter.add(pTitleUpdate);
-			
-			JPanel pWriterUpdate = new JPanel();
-			label = new JLabel("글쓴이",JLabel.CENTER);
-			label.setPreferredSize(new Dimension(50,30));
-			pWriterUpdate.add(label);
-			pWriterUpdate.add(getTxtWriter());
-			pCenter.add(pWriterUpdate);
-			
-			JPanel pContentUpdate = new JPanel();
-			label = new JLabel("내용",JLabel.CENTER);
-			label.setPreferredSize(new Dimension(50,30));
-			pContentUpdate.add(label);
-			pContentUpdate.add(getTxtContent());
-			pCenter.add(pContentUpdate);
-			
+			pCenter.add(getPTitle());
+			pCenter.add(getPWriter());
+			pCenter.add(getPContent());
 		}
 		return pCenter;
 	}
 	
 	
-	public JTextField getTxtTitle() {
-		if(txtTitle == null) {
-			txtTitle = new JTextField();
-			txtTitle.setPreferredSize(new Dimension(250,30));
-		}
-		return txtTitle;
-	}
-	
-	public JTextField getTxtWriter() {
-		if(txtWriter == null) {
-			txtWriter = new JTextField();
-			txtWriter.setPreferredSize(new Dimension(250,30));
-		}
-		return txtWriter;
-	}
-	
-	public JTextArea getTxtContent() {
-		if(txtContent == null) {
-			txtContent = new JTextArea();
-			txtContent.setPreferredSize(new Dimension(250,80));
-		}
-		return txtContent;
-	}
-
 	public JPanel getPTitle() {
 		if(pTitle==null) {
 			pTitle = new JPanel();
+			JLabel label = new JLabel("제목",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pTitle.add(label);
+			BoardDTO dto = new BoardDAO().getInstance().getBoardByBno(bno);
+			if(txtTitle == null) {
+				txtTitle = new JTextField();
+				txtTitle.setPreferredSize(new Dimension(250,30));
+				txtTitle.setText(dto.getTitle());
+			}
+			pTitle.add(txtTitle);
 		}
 		return pTitle;
 	}	
@@ -115,17 +71,37 @@ public class ViewDialog extends JDialog {
 	public JPanel getPWriter() {
 		if(pWriter==null) {
 			pWriter = new JPanel();
+			JLabel label = new JLabel("글쓴이",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pWriter.add(label);
+			BoardDTO dto = new BoardDAO().getInstance().getBoardByBno(bno);
+			if(txtWriter == null) {
+				txtWriter = new JTextField();
+				txtWriter.setPreferredSize(new Dimension(250,30));
+				txtWriter.setText(dto.getWriter());
+			}
+			pWriter.add(txtWriter);
+			
 		}
 		return pWriter;
 	}		
-	
 	public JPanel getPContent() {
-		if(pContent == null) {
+		if(pContent==null) {
 			pContent = new JPanel();
+			JLabel label = new JLabel("내용",JLabel.CENTER);
+			label.setPreferredSize(new Dimension(50,30));
+			pContent.add(label);
+			BoardDTO dto = new BoardDAO().getInstance().getBoardByBno(bno);
+			if(txtContent == null) {
+				txtContent = new JTextArea();
+				txtContent.setPreferredSize(new Dimension(250,80));
+				txtContent.setText(dto.getContent());
+			}
+			pContent.add(txtContent);
+			
 		}
 		return pContent;
 	}
-
 	public JPanel getPSouth() {
 		if(pSouth == null) {
 			pSouth = new JPanel();
@@ -141,10 +117,12 @@ public class ViewDialog extends JDialog {
 		return pSouth;
 	}
 	
+	//조회수
 	public void setBoard() {
-		/*코드 추가*/
+		
 	}
 	
+	//dao.updateboard
 	public JButton getBtnUpdate() {
 		if(btnUpdate == null) {
 			btnUpdate = new JButton();
@@ -153,10 +131,12 @@ public class ViewDialog extends JDialog {
 		return btnUpdate;
 	}
 	
+	//dao.deleteboard
 	public JButton getBtnDelete() {
 		if(btnDelete == null) {
 			btnDelete = new JButton();
 			btnDelete.setText("삭제");
+			btnDelete.addActionListener(e -> {BoardDAO.getInstance().deleteBoard(bno); dispose();});
 		}
 		return btnDelete;
 	}	
